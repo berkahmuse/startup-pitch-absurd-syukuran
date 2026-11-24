@@ -6,7 +6,7 @@
 // that sentence — and nothing else — to /output/entry.txt.
 //
 // Freshness anchor (drand quicknet, quoted BEFORE the first write of the
-// entry file; see ANCHOR.md and .makefun/freshness.json):
+// entry file; see ANCHOR.md):
 //   round 34235968
 //   randomness a312d2da3fea94a3d811b0762a1fcbe1848d3a079cc11442dc753643d2a11b62
 //
@@ -48,6 +48,9 @@ function checkGate(text: string): void {
   }
   if (text.trim().length === 0) {
     throw new Error("entry must not be only whitespace");
+  }
+  if (/[\x00-\x1f\x7f]/.test(text)) {
+    throw new Error("entry must not contain control characters");
   }
   if (countSentences(text) !== 1) {
     throw new Error(

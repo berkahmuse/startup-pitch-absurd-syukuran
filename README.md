@@ -49,8 +49,7 @@ Self-check: two runs produce byte-identical output
 188 characters, 1 sentence).
 
 Freshness anchor (drand quicknet, quoted before the first write of the
-entry file): round **34235968** — see [ANCHOR.md](ANCHOR.md) and
-`.makefun/freshness.json`.
+entry file): round **34235968** — see [ANCHOR.md](ANCHOR.md).
 
 ## License
 
